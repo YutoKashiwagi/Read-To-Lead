@@ -1,0 +1,18 @@
+LineLength:
+  Max: 120
+  
+BlockLength:
+  Max: 100
+  
+Documentation:
+  Enabled: false
+  
+AsciiComments:
+  Enabled: false
+  
+MixinUsage:
+  Enabled: false
+  
+ClassAndModuleChildren:
+  Enabled: false
+  
