@@ -14,6 +14,9 @@ gem 'sass-rails',   '5.0.6'
 gem 'turbolinks',   '5.0.1'
 gem 'uglifier',     '3.2.0'
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'
 
 #slimのジェネレーターを提供してくれるslim-rails
 gem 'slim-rails'

@@ -3,3 +3,4 @@ h1 Read to Lead
   h2 User: #{current_user.name},Email:#{current_user.email}
 -else
   h2 Please log in
+  = link_to 'login with facebook',user_facebook_omniauth_authorize_path
