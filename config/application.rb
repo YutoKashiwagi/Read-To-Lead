@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -18,7 +20,7 @@ module ReadToLead
                        routing_specs: false,
                        controller_specs: true,
                        request_specs: false
-      g.fixture_replacement :factory_bot, dir: "spec/factories"
+      g.fixture_replacement :factory_bot, dir: 'spec/factories'
     end
   end
 end

@@ -2,26 +2,26 @@
 
 source 'https://rubygems.org'
 
-gem 'bcrypt',         '3.1.12'
+gem 'bcrypt', '3.1.12'
 gem 'bootstrap', '~> 4.4.1'
 gem 'coffee-rails', '4.2.2'
+gem 'devise'
+gem 'dotenv-rails'
 gem 'jbuilder',     '2.7.0'
 gem 'jquery-rails', '4.3.1'
+gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'puma', '3.9.1'
 gem 'rails', '5.1.6'
 gem 'rubocop', require: false
-gem 'sass-rails',   '5.0.6'
-gem 'turbolinks',   '5.0.1'
-gem 'uglifier',     '3.2.0'
-gem 'devise'
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'dotenv-rails'
+gem 'sass-rails', '5.0.6'
+gem 'turbolinks', '5.0.1'
+gem 'uglifier', '3.2.0'
 
-#slimのジェネレーターを提供してくれるslim-rails
+# slimのジェネレーターを提供してくれるslim-rails
 gem 'slim-rails'
 
-#erb→slim記法に変換するためのgem
+# erb→slim記法に変換するためのgem
 gem 'html2slim'
 
 group :development, :test do

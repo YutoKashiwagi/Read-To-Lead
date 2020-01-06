@@ -27,11 +27,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # def after_omniauth_failure_path_for(scope)
   #   super(scope)
   # end
-  
+
   def facebook
     callback_from :facebook
   end
-  
+
   def callback_from(provider)
     provider = provider.to_s
 
