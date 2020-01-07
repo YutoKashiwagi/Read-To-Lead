@@ -3,5 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "ユーザーが正常に作成されること" do
+    @user = User.new(name:'foobar',email:'foobar@example.com',password:"foobar")
+    expect(@user.valid?).to eq true
+  end
 end
