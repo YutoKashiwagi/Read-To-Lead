@@ -17,6 +17,8 @@ gem 'rubocop', require: false
 gem 'sass-rails', '5.0.6'
 gem 'turbolinks', '5.0.1'
 gem 'uglifier', '3.2.0'
+gem 'carrierwave'
+gem 'mini_magick'
 
 # slimのジェネレーターを提供してくれるslim-rails
 gem 'slim-rails'
@@ -56,6 +58,7 @@ end
 
 group :production do
   gem 'pg', '0.20.0'
+  gem 'fog', '1.42'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

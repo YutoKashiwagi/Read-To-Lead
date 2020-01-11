@@ -1,0 +1,27 @@
+-if user_signed_in?
+  = link_to 'ログアウト',destroy_user_session_path, :method => :delete
+  br
+  = link_to 'マイページへ',user_path(current_user.id)
+  h2 投稿する
+  = form_for @post do |f|
+    =  f.file_field :picture,accept: 'jpeg,png'
+    =  f.submit
+  hr/
+  h2 投稿一覧
+  - @posts.each do |post|
+    - unless post.nil?
+      = image_tag post.picture.url
+      br
+    - if current_user
+      = link_to "delete",post_path(post.id),method: :delete          
+- else
+  = link_to "ユーザー登録",new_user_registration_path
+  = link_to "ログイン",new_user_session_path
+  
+javascript:
+  | $('#micropost_picture').bind('change', function() {
+    | var size_in_megabytes = this.files[0].size/1024/1024;
+    | if (size_in_megabytes > 5) {
+      | alert('Maximum file size is 5MB. Please choose a smaller file.');
+    | }
+  | });
