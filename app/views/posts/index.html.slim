@@ -6,14 +6,16 @@
   = form_for @post do |f|
     =  f.file_field :picture,accept: 'jpeg,png'
     =  f.submit
-  hr/
+  hr
   h2 投稿一覧
-  - @posts.each do |post|
-    - unless post.nil?
-      a href=post_path(post.id) = image_tag post.picture.url
-      br
-    - if current_user
-      = link_to "delete",post_path(post.id),method: :delete          
+  ul.list-unstyled.list-inline
+    - @posts.each do |post|
+      li.list-inline-item
+        - unless post.nil?
+          a href=post_path(post.id) = image_tag post.picture.url
+          br
+        /- if current_user
+          = link_to "delete",post_path(post.id),method: :delete          
 - else
   = link_to "ユーザー登録",new_user_registration_path
   = link_to "ログイン",new_user_session_path

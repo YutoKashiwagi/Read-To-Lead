@@ -1,4 +1,11 @@
-= image_tag @post.picture.url
+.container
+    .row
+        .col-6
+            = image_tag @post.picture.url
+        .col-6.display-1.p-5
+            - if @post.user == current_user
+                = link_to "delete",post_path(@post.id),method: :delete
+
 
 h2 コメント一覧
 p  

@@ -1,8 +1,20 @@
-ul
-  li name:  #{current_user.name}
-  li email: #{current_user.email}
-  li profile:
-h2
-  = link_to 'Edit Profile',edit_user_registration_path
-  br
-  = link_to '投稿する',posts_path
+.container
+  .row
+    .col-4.display-1
+      = gravatar_for @user
+    .col-4.display-1
+      = @user.name
+    .col-4.display-3
+      p.p-3 = link_to '編集',edit_user_registration_path
+  hr
+  .row
+    .col-4.display-4
+      p 投稿#{@user.posts.count}件
+    .col-4.display-4
+      p フォロワーn人
+    .col-4.display-4
+      p フォロー中n人
+  hr
+  h2
+    br
+    = link_to '投稿する',posts_path
