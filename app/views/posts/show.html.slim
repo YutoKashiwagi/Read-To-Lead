@@ -1,1 +1,14 @@
 = image_tag @post.picture.url
+
+h2 コメント一覧
+p  
+  - @comments.each do |c|
+        a href=user_path(c.user_id) #{c.user.name}
+        br
+        = c.content
+        br
+br
+= form_for [@post,@comment] do |f|
+    = f.text_field :content
+    br
+    = f.submit 'コメントする'

@@ -7,7 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable
          
   has_many :posts, dependent: :destroy
-  
+  has_many :comment, dependent: :destroy
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
 

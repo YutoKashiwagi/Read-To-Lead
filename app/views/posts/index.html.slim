@@ -10,7 +10,7 @@
   h2 投稿一覧
   - @posts.each do |post|
     - unless post.nil?
-      = image_tag post.picture.url
+      a href=post_path(post.id) = image_tag post.picture.url
       br
     - if current_user
       = link_to "delete",post_path(post.id),method: :delete          
