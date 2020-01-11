@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   before_action :authenticate_user!,only: [:show,:create,:destroy]
   
   def index
-    @posts = Post.all
+    @user = current_user
+    @posts = @user.posts unless current_user.nil?
     @post = Post.new
   end
 

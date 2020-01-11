@@ -17,11 +17,10 @@ html
           li.nav-item.active
             a.nav-link[href=posts_path]
               | 投稿一覧
-              span.sr-only
-                | (current)
           li.nav-item
-            a.nav-link[href="/users/#{current_user.id}"]
-              | User
+            -unless current_user.nil?
+              a.nav-link[href=user_path(current_user)]
+                | User
           li.nav-item.dropdown
             a#navbarDropdown.nav-link.dropdown-toggle[href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
               |  Dropdown 
