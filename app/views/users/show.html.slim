@@ -1,9 +1,15 @@
+- provide(:title,@user.name)
 .container
   = render 'shared/user_info'
   hr
   = render 'shared/stats'
   hr
-.text-center.display-1
-  = link_to '投稿一覧へ',posts_path
+  h2.text-center #{@user.name}の投稿
+  ul.list-unstyled.list-inline
+    - @user.posts.each do |post|
+      li.list-inline-item
+        - unless post.nil?
+          a href=post_path(post.id) = image_tag post.picture.url
+          br
 br
 = render 'follow_form'
