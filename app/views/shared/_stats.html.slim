@@ -1,0 +1,8 @@
+- @user = User.find(params[:id])
+.row
+  .col-4.display-4
+    p 投稿#{@user.posts.count}件
+  .col-4.display-4
+    a href=followers_user_path(@user) フォロワー#{@user.followers.count}人
+  .col-4.display-4
+    a href=following_user_path(@user) フォロー中#{@user.followers.count}人

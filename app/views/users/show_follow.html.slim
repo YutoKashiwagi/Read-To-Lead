@@ -1,0 +1,18 @@
+.container
+  .row
+    .col-4
+      = link_to gravatar_for(@user), @user
+      br
+      = @user.name
+    .col-8
+      .display-2
+        = @title
+      - if @users.any?
+        - @users.each do |user|
+          .display-2
+            .row
+              .col-6
+                = link_to gravatar_for(user),user
+              .col-6
+                p #{user.name}
+            hr

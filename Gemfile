@@ -4,11 +4,13 @@ source 'https://rubygems.org'
 
 gem 'bcrypt', '3.1.12'
 gem 'bootstrap', '~> 4.4.1'
+gem 'carrierwave'
 gem 'coffee-rails', '4.2.2'
 gem 'devise'
 gem 'dotenv-rails'
 gem 'jbuilder',     '2.7.0'
 gem 'jquery-rails', '4.3.1'
+gem 'mini_magick'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'puma', '3.9.1'
@@ -17,8 +19,6 @@ gem 'rubocop', require: false
 gem 'sass-rails', '5.0.6'
 gem 'turbolinks', '5.0.1'
 gem 'uglifier', '3.2.0'
-gem 'carrierwave'
-gem 'mini_magick'
 
 # slimのジェネレーターを提供してくれるslim-rails
 gem 'slim-rails'
@@ -57,8 +57,8 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '0.20.0'
   gem 'fog', '1.42'
+  gem 'pg', '0.20.0'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

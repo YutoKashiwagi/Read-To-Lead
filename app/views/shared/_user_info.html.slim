@@ -1,0 +1,8 @@
+- @user = User.find(params[:id])
+.row
+  .col-4.display-1
+    = gravatar_for @user
+  .col-4.display-1
+    = @user.name
+  .col-4.display-3
+    p.p-3 = link_to '編集',edit_user_registration_path

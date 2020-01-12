@@ -1,20 +1,9 @@
 .container
-  .row
-    .col-4.display-1
-      = gravatar_for @user
-    .col-4.display-1
-      = @user.name
-    .col-4.display-3
-      p.p-3 = link_to '編集',edit_user_registration_path
+  = render 'shared/user_info'
   hr
-  .row
-    .col-4.display-4
-      p 投稿#{@user.posts.count}件
-    .col-4.display-4
-      p フォロワーn人
-    .col-4.display-4
-      p フォロー中n人
+  = render 'shared/stats'
   hr
-  h2
-    br
-    = link_to '投稿する',posts_path
+.text-center.display-1
+  = link_to '投稿一覧へ',posts_path
+br
+= render 'follow_form'

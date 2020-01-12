@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
-  before_action :authenticate_user!,only: [:show,:create,:destroy]
-  
+  before_action :authenticate_user!, only: %i[show create destroy]
+
   def index
     @user = current_user
     @posts = @user.posts unless current_user.nil?
@@ -12,7 +14,7 @@ class PostsController < ApplicationController
     @comments = @post.comment.all
     @comment = Comment.new
   end
-  
+
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
@@ -24,18 +26,18 @@ class PostsController < ApplicationController
       redirect_to root_path
     end
   end
-  
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    flash[:success] = "投稿が削除されました"
+    flash[:success] = '投稿が削除されました'
     redirect_to request.referrer || root_path
   end
-  
+
   private
-    
-    def post_params
-      params.fetch(:post, {}).permit(:picture)
-      # params.require(:post).permit(:picture)
-    end
+
+  def post_params
+    params.fetch(:post, {}).permit(:picture)
+    # params.require(:post).permit(:picture)
+  end
 end
