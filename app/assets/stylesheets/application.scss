@@ -12,3 +12,16 @@ footer {
 .copyright {
   padding-top: 70px;
 }
+
+// 投稿一覧のスタイリング
+
+.post-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 984px;
+  margin: auto;
+}
+
+.post-item {
+  margin: 14px;
+}

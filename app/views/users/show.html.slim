@@ -5,11 +5,11 @@
   = render 'shared/stats'
   hr
   h2.text-center #{@user.name}の投稿
-  ul.list-unstyled.list-inline
+  .post-box
     - @user.posts.each do |post|
-      li.list-inline-item
-        - unless post.nil?
-          a href=post_path(post.id) = image_tag post.picture.url
-          br
+      - unless post.nil?
+        .post-item
+          a href=post_path(post.id) = image_tag post.picture.url, :size =>'300x300'
+
 br
 = render 'follow_form'
