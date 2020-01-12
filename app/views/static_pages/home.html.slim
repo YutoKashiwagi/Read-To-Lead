@@ -1,5 +1,11 @@
-- if user_signed_in?
-  h2 User: #{current_user.name},Email:#{current_user.email}
--else
-  h2 Please log in
-  = link_to 'login with facebook',user_facebook_omniauth_authorize_path
+.text-center
+  .display-1
+    p Read to Lead
+  .display-4
+    p 読んだ本をシェアしよう！
+    - if user_signed_in?
+      = link_to 'Log out',destroy_user_session_path, :method => :delete
+    -else
+      = link_to 'Sign up',new_user_registration_path
+      br
+      = link_to 'Log in ',new_user_session_path
