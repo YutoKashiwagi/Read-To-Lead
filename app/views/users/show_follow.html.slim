@@ -1,3 +1,4 @@
+- @users = @users.page(params[:page]).per(20)
 .container
   .row
     .col-4
@@ -16,3 +17,4 @@
               .col-6
                 p #{user.name}
             hr
+        = paginate @users
