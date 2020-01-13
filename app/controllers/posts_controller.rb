@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def index
     @user = current_user
-    @posts = @user.posts unless current_user.nil?
+    @posts = Post.all
     @post = Post.new
   end
 

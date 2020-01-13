@@ -1,0 +1,5 @@
+.post-box
+  - @posts.each do |post|
+    - unless post.nil?
+      .post-item
+        a href=post_path(post.id) = image_tag post.picture.url, :size =>'300x300'

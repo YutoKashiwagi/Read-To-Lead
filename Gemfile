@@ -8,6 +8,7 @@ gem 'carrierwave'
 gem 'coffee-rails', '4.2.2'
 gem 'devise'
 gem 'dotenv-rails'
+gem 'faker'
 gem 'jbuilder',     '2.7.0'
 gem 'jquery-rails', '4.3.1'
 gem 'mini_magick'
@@ -25,6 +26,8 @@ gem 'slim-rails'
 
 # erb→slim記法に変換するためのgem
 gem 'html2slim'
+# ページネーション(will_pagenateより操作性とカスタマイズ性で優れている)
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug', '9.0.6', platform: :mri
@@ -46,7 +49,6 @@ group :test do
   gem 'capybara', '~> 2.13'
   gem 'database_cleaner'
   gem 'factory_bot_rails'
-  gem 'faker'
   gem 'guard', '2.13.0'
   gem 'guard-minitest', '2.4.4'
   gem 'launchy'

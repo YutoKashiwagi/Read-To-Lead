@@ -8,11 +8,7 @@
       =  f.submit
     hr
 h2.text-center みんなの投稿
-.post-box
-  - Post.all.each do |post|
-    - unless post.nil?
-      .post-item
-        a href=post_path(post.id) = image_tag post.picture.url, :size =>'300x300'
+= render 'shared/show_posts'
   
 javascript:
   | $('#micropost_picture').bind('change', function() {

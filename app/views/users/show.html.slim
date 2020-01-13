@@ -5,11 +5,7 @@
   = render 'shared/stats'
   hr
   h2.text-center #{@user.name}の投稿
-  .post-box
-    - @user.posts.each do |post|
-      - unless post.nil?
-        .post-item
-          a href=post_path(post.id) = image_tag post.picture.url, :size =>'300x300'
+  = render 'shared/show_posts'
 
 br
 = render 'follow_form'
