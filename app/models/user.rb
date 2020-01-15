@@ -64,7 +64,7 @@ class User < ApplicationRecord
   end
   
   def not_good(post)
-    liked_posts.find_by(id: post.id).destroy
+    self.likes.find_by(post_id: post.id).destroy
   end
   
   def good?(post)

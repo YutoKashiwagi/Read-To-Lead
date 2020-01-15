@@ -19,3 +19,9 @@ br
     = f.text_field :content
     br
     = f.submit 'コメントする'
+
+-unless current_user.good?(@post)
+    = button_to 'いいね',post_likes_path(@post)
+-else
+    = button_to 'いいね取り消し',post_like_path(@post),method: :delete
+p #{@post.likes.count}いいね
