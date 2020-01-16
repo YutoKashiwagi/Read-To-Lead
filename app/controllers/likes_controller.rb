@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LikesController < ApplicationController
   before_action :authenticate_user!
   def create
@@ -6,7 +8,7 @@ class LikesController < ApplicationController
     @user.good(@post)
     redirect_back(fallback_location: root_path)
   end
-  
+
   def destroy
     @user = current_user
     @post = Post.find_by(params[:post_id])
