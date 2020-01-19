@@ -6,6 +6,7 @@ class LikesController < ApplicationController
     @user = current_user
     @post = Post.find_by(params[:post_id])
     @user.good(@post)
+    @post.create_notification_like(current_user)
     redirect_back(fallback_location: root_path)
   end
 

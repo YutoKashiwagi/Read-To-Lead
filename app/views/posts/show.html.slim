@@ -20,8 +20,8 @@ br
     br
     = f.submit 'コメントする'
 
--unless current_user.good?(@post)
-    = button_to 'いいね',post_likes_path(@post)
--else
+-if current_user.good?(@post)
     = button_to 'いいね取り消し',post_like_path(@post),method: :delete
+-else
+    = button_to 'いいね',post_likes_path(@post)
 p #{@post.likes.count}いいね

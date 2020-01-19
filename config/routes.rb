@@ -18,4 +18,6 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
     resources :likes,    only: %i[create destroy]
   end
+
+  resources :notifications, only: [:index]
 end

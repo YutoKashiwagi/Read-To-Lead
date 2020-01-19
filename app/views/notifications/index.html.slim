@@ -1,0 +1,20 @@
+- notifications = @notifications.where.not(visitor_id: current_user.id)
+- if notifications.exists?
+  - notifications.each do |notification|
+    - visitor = notification.visitor
+    - visited = notification.visited
+    = link_to "#{notification.visitor.name}さんが",user_path(visitor)
+    - case notification.action
+    - when 'follow'
+      p あなたをフォローしました
+    - when 'like'
+      = link_to 'あなたの投稿',post_path(visited)
+      p にいいねしました
+    - when 'comment'
+      = link_to 'あなたの投稿',post_path(visited)
+      p にコメントしました
+    hr
+    = paginate notifications
+- else
+  p 
+    | 通知はありません
