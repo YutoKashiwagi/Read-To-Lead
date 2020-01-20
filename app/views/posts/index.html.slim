@@ -12,8 +12,11 @@
       br
       =  f.submit
     hr
-h2.text-center みんなの投稿
-= render 'shared/show_posts'
+- if @search_posts
+  - @posts = @search_posts
+  = render 'shared/show_posts'
+- else
+  = render 'shared/show_posts'
   
 javascript:
   | $('#micropost_picture').bind('change', function() {
