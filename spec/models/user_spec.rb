@@ -22,6 +22,14 @@ RSpec.describe User, type: :model do
         expect(user.errors[:name]).to include('is too long (maximum is 30 characters)')
       end
     end
+    
+    context 'profile' do
+      it 'length' do
+        user.profile = 'a' * 201
+        user.valid?
+        expect(user.errors[:profile]).to include("is too long (maximum is 200 characters)")
+      end
+    end
 
     context 'password' do
       it 'presence' do

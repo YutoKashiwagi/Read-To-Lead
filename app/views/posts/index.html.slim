@@ -5,6 +5,11 @@
     h2 投稿する
     = form_for @post do |f|
       =  f.file_field :picture,accept: 'jpeg,png'
+      br
+      =  f.label :title
+      br
+      =  f.text_field :title
+      br
       =  f.submit
     hr
 h2.text-center みんなの投稿

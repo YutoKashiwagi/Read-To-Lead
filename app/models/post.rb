@@ -14,6 +14,7 @@ class Post < ApplicationRecord
 
   validates :user_id, presence: true
   validates :picture, presence: true
+  validates :title,   length: { maximum: 20 }
   validate  :picture_size
 
   # いいねされたときに通知を送る

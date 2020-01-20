@@ -4,23 +4,30 @@
 User.create!(name: 'sample',
              email: 'sample@example.com',
              password: 'sample',
-             password_confirmation: 'sample')
+             password_confirmation: 'sample',
+             profile: 'profile'
+             )
 
 99.times do |n|
-  name  = Faker::Name.name
-  email = "example-#{n + 1}@railstutorial.org"
+  name     = Faker::Name.name
+  email    = "example-#{n + 1}@railstutorial.org"
   password = 'password'
+  profile  = 'My Profile'
   User.create!(name: name,
                email: email,
                password: password,
-               password_confirmation: password)
+               password_confirmation: password,
+               profile: profile
+               )
 end
 
 # 投稿
 30.times do
   user = User.first
   Post.create!(user_id: user.id,
-               picture: open('app/assets/images/suzu.jpg'))
+               picture: open('app/assets/images/suzu.jpg'),
+               title:   'title'
+               )
 end
 
 # リレーションシップ

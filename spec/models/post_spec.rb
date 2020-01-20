@@ -15,6 +15,12 @@ RSpec.describe Post, type: :model do
       post.valid?
       expect(post.errors[:picture]).to include("can't be blank")
     end
+    
+    it 'length:title' do
+      post.title = 'a' * 21
+      post.valid?
+      expect(post.errors[:title]).to include("is too long (maximum is 20 characters)")
+    end
 
     it '画像の形式' do
       post.picture = 'hogehogefoobar.gif'
