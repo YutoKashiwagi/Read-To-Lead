@@ -2,13 +2,10 @@ footer.footer.bg-light
   .container
     -if user_signed_in?
       .text-center.display-4
-        = link_to '投稿する',posts_path
+        = link_to icon('far','image'),posts_path
       .text-muted.text-center
         p ©️kashiwamochi
     -else
       .text-muted.text-center
         p.copyright ©️kashiwamochi
-    
-    
-    
     

@@ -12,7 +12,7 @@ header
           li.nav-item
             -unless current_user.nil?
               a.nav-link[href=user_path(current_user)]
-                | User
+                = icon('fas','user')
           li.nav-item
             a.nav-link[href=help_path]
               | Help
@@ -22,7 +22,7 @@ header
           - if user_signed_in?
             li.nav-item
               a.nav-link[href=notifications_path]
-                | Notification
+                = icon('fas','bell')
         form.form-inline.my-2.my-lg-0
           input.form-control.mr-sm-2[type="search" placeholder="Search" aria-label="Search"]
           button.btn.btn-outline-success.my-2.my-sm-0[type="submit"]
