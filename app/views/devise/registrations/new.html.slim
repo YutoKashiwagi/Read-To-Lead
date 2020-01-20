@@ -14,16 +14,14 @@
     .field
       = f.label :profile
       br
-      = f.text_area :profile
+      = f.text_area :profile, placeholder: '空白可 200文字以内'
     .field
       = f.label :password
-      - if @minimum_password_length
-        em
-          | (
-          = @minimum_password_length
-          |  characters minimum)
       br
-      = f.password_field :password, autocomplete: "new-password"
+      - if @minimum_password_length
+        = f.password_field :password, placeholder: "#{@minimum_password_length}文字以上",autocomplete: "new-password"
+      -else
+        = f.password_field :password, autocomplete: "new-password"
     .field
       = f.label :password_confirmation
       br
