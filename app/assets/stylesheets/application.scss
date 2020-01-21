@@ -4,7 +4,6 @@
 
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
-
 @import "bootstrap";
 
 .debug_dump {
@@ -30,4 +29,10 @@ footer {
 
 .post-item {
   margin: 14px;
+}
+
+// 検索フォームのスタイリング
+
+.search-form {
+  margin: auto;
 }
