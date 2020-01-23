@@ -65,5 +65,13 @@ RSpec.describe User, type: :model do
         expect(dup_user.errors[:email]).to include('has already been taken')
       end
     end
+    
+    context '利用規約' do
+      it '同意しないと利用できないこと' do
+        user.accepted = false
+        user.valid?
+        expect(user.errors[:accepted]).to include("must be accepted")
+      end
+    end
   end
 end

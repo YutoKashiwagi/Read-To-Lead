@@ -5,7 +5,8 @@ User.create!(name: 'sample',
              email: 'sample@example.com',
              password: 'sample',
              password_confirmation: 'sample',
-             profile: 'profile'
+             profile: 'profile',
+             accepted: true
              )
 
 99.times do |n|
@@ -17,7 +18,8 @@ User.create!(name: 'sample',
                email: email,
                password: password,
                password_confirmation: password,
-               profile: profile
+               profile: profile,
+               accepted: true
                )
 end
 

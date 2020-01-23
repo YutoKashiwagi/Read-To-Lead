@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates :email,     length: { maximum: 255 }
   validates :password,  length: { maximum: 30 }
   validates :profile,   length: { maximum: 200 }
-
+  validates_acceptance_of :accepted
   # ユーザー機能
   has_many :posts,    dependent: :destroy
   has_many :comments, dependent: :destroy

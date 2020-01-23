@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   resources :search, only: [:index]
 
   resources :notifications, only: [:index]
+  resources :terms_of_services, only: [:index]
 end
