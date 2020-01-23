@@ -13,22 +13,12 @@ header
             -unless current_user.nil?
               a.nav-link[href=user_path(current_user)]
                 = icon('fas','user')
-          li.nav-item
-            a.nav-link[href=help_path]
-              | Help
-          li.nav-item
-            a.nav-link[href=contact_path]
-              | Contact
           - if user_signed_in?
             li.nav-item
               a.nav-link[href=notifications_path]
                 = icon('fas','bell')
           .search-form
             li.nav-item
-              = search_form_for @search, url: posts_path do |f|
+              = search_form_for @search, url: search_index_path do |f|
                 = f.text_field :title_cont, placeholder: '投稿を検索'
                 = f.submit ('検索')
-
-          /<%= search_form_for @search, products_path do |f| %>
-            <%= f.text_field :name_cont, placeholder: '名前を入力...' %>
-            <%= f.submit ("検索する") %>

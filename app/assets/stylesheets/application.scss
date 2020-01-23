@@ -12,6 +12,7 @@
 
 footer {
   height: 100px;
+  margin: auto;
 }
 
 .copyright {
@@ -34,5 +35,15 @@ footer {
 // 検索フォームのスタイリング
 
 .search-form {
+  margin: auto;
+}
+
+// コメント
+
+.comment_container {
+  display: flex;
+}
+
+.comment_texts {
   margin: auto;
 }

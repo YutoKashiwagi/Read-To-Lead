@@ -4,8 +4,8 @@
   hr
   = render 'shared/stats'
   hr
+  = render 'follow_form'
+  br
   h2.text-center #{@user.name}の投稿
-  = render 'shared/show_posts'
-
-br
-= render 'follow_form'
+  .post-box
+    = render :partial => 'shared/show_posts', :collection => @posts, as: 'post'

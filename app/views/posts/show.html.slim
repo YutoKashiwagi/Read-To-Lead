@@ -1,28 +1,28 @@
 .container
     .row
         .col-6
-            p #{@post.title}
+            .row
+                .col-6
+                    p #{@post.title}
+                .col-2
+                    p #{@post.likes.count}
+                .col-2
+                    -if current_user.good?(@post)
+                        = button_to post_like_path(@post),method: :delete do
+                            i.fas.fa-heart
+                    -else
+                        = button_to post_likes_path(@post) do
+                            i.far.fa-heart
+                .col-2
+                    - if @post.user == current_user
+                        = link_to icon('fas','trash-alt'),post_path(@post.id),method: :delete
+                        
             = image_tag @post.picture.url
-        .col-6.display-1.p-5
-            - if @post.user == current_user
-                = link_to icon('fas','trash-alt'),post_path(@post.id),method: :delete
-
-
-h2 コメント一覧
-p  
-  - @comments.each do |c|
-        a href=user_path(c.user_id) #{c.user.name}
-        br
-        = c.content
-        br
-br
-= form_for [@post,@comment] do |f|
-    = f.text_field :content
-    br
-    = f.submit 'コメントする'
-
--if current_user.good?(@post)
-    = button_to 'いいね取り消し',post_like_path(@post),method: :delete
--else
-    = button_to 'いいね',post_likes_path(@post)
-p #{@post.likes.count}いいね
+        .col-6
+            h2.text-center コメント
+            = render :partial => 'shared/comment', :collection => @comments, as: 'comment'
+            br
+            = form_for [@post,@comment] do |f|
+                = f.text_field :content
+                br
+                = f.submit 'コメントする'

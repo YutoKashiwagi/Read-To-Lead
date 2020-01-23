@@ -1,0 +1,10 @@
+.comment_container
+  .comment_user
+    = gravatar_for comment.user
+  .comment_texts
+    .comment_user_name
+      = link_to comment.user.name, user_path(comment.user)
+    br
+    .comment_content
+      = comment.content
+hr

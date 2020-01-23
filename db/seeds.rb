@@ -25,7 +25,7 @@ end
 30.times do
   user = User.first
   Post.create!(user_id: user.id,
-               picture: open('app/assets/images/suzu.jpg'),
+               picture: open('app/assets/images/books.jpg'),
                title:   'title'
                )
 end

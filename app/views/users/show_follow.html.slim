@@ -10,11 +10,10 @@
         = @title
       - if @users.any?
         - @users.each do |user|
-          .display-2
-            .row
-              .col-6
-                = link_to gravatar_for(user),user
-              .col-6
-                p #{user.name}
-            hr
+          .row
+            .col-6
+              = link_to gravatar_for(user),user
+            .col-6
+              p #{user.name}
+          hr
         = paginate @users

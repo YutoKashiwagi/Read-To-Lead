@@ -16,12 +16,12 @@ RSpec.feature "Searches", type: :feature do
     fill_in '投稿を検索', with: 'title'
     click_on '検索'
     expect(page).to have_content '検索結果'
-    expect(page).to have_selector("img[src$='suzu.jpg']")
+    expect(page).to have_selector("img[src$='books.jpg']")
   end
   
   scenario '実在しない投稿を検索する場合' do
     fill_in '投稿を検索', with: 'hoge'
     click_on '検索'
-    expect(page).not_to have_selector("img[src$='suzu.jpg']")
+    expect(page).not_to have_selector("img[src$='books.jpg']")
   end
 end
