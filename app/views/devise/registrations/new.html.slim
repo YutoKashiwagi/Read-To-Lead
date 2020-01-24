@@ -27,10 +27,9 @@
       br
       = f.password_field :password_confirmation, autocomplete: "new-password"
     .field
-      p
-        = f.check_box :accepted ,{},checked_value = "true",unchecked_value = "false" 
-        a href=terms_of_services_path 利用規約
-        | に同意する
+      = f.check_box :accepted ,{},checked_value = "true",unchecked_value = "false"
+      a href=terms_of_services_path 利用規約
+      | に同意する
     .actions
       = f.submit "Sign up"
   = render "devise/shared/links"
