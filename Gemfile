@@ -14,7 +14,7 @@ gem 'jquery-rails', '4.3.1'
 gem 'mini_magick'
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'puma', '3.9.1'
+gem 'puma', '4.3.9'
 gem 'rails', '5.1.6'
 gem 'rubocop', require: false
 gem 'sass-rails', '5.0.6'
